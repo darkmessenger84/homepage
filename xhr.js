@@ -1,10 +1,11 @@
 let xhr = new XMLHttpRequest();
 
-xhr.onload = function() {
+xhr.onreadystatechange = function() {
   
-  if (xhr.status == 200)
+  if (this.readyState == 4 
+  &&  this.status == 200)
   {
-    document.getElementById("contentwrapper").innerHTML = xhr.responseText;
+    document.getElementById("contentwrapper").innerHTML = this.responseText;
   }
 
 }
@@ -13,6 +14,7 @@ function pull(res)
 {
 
   xhr.open('GET', res);
+  console.log(res)
   xhr.send();
 
 }
