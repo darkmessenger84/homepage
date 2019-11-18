@@ -33,9 +33,10 @@
 	width: 960px;
 	margin: 0 auto;
 	margin-top: 0px !important;
-	border-width: 0px;
-	border-style: none;
-	border-color: #000;
+	border-left-width: 1px;
+	border-right-width: 1px;
+	border-style: solid;
+	border-color: #a5ff06;
 	background-color: #000000;
     min-height: 100vh;
     color: #ffffff;
@@ -110,7 +111,7 @@
 	font-family: 'Oswald', sans-serif;
 	font-weight: 900;
 	line-height:1.5em;
-	color: #ffffff;
+	color: #76b900;
 
 	text-shadow:
     -1px -1px 0 #456d00,
@@ -126,7 +127,7 @@
 	margin: 0 auto;
 	margin-left:-25vw;
 	margin-bottom:1em;
-	background: linear-gradient(#a5ff06,#456d00);
+	background: linear-gradient(#76b900,#456d00);
 	z-index: 2;
 	position: relative;
 	left:0px;
@@ -185,12 +186,13 @@
 {
 
 	padding: 4px;
-	background-color: #7EA000;
-	color: #ffffff;
-	font-size: 1.25em;
+	background: linear-gradient(#456d00,#76b900);
+	color: #000;
+	font-family: "Black Ops One", sans-serif;
+	font-style: oblique;
+	font-size: 1.5em;
 	font-weight: bold;
 	vertical-align: middle;
-	text-shadow: 1px 1px #000;
 
 }
 
@@ -198,6 +200,24 @@
 {
 
 	padding: 4px;
-	background-color: #BADA55;
+	background: #0F0F0F;
+	color: #a5ff06;
 
+}
+
+a {
+	text-decoration: underline;
+	color: #a5ff06;
+}
+
+a:active, a:link {
+	color: #a5ff06;
+}
+
+a:visited {
+	color: #456d00;
+}
+
+a:hover {
+	color: #fff;
 }
