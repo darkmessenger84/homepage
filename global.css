@@ -103,6 +103,23 @@
     1px 1px 0 #456d00;  
 }
 
+.bannerheading a,
+.bannerheading a:active,
+.bannerheading a:visited,
+.bannerheading a:hover,
+.bannerheading a:link
+{
+
+
+	text-decoration: none;
+	text-shadow:
+    -1px -1px 0 #456d00,
+    1px -1px 0 #456d00,
+    -1px 1px 0 #456d00,
+    1px 1px 0 #456d00;  
+
+}
+
 .bannersubtext
 {
 	margin-left:.25em;
