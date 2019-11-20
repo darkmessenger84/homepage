@@ -1,3 +1,5 @@
+const START_PAGE = "site/index.xml";
+
 var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
@@ -10,10 +12,18 @@ xhr.onreadystatechange = function() {
   
 }
 
-function pull(res)
+function pull(res = START_PAGE)
 {
   
+  if (!res) { res = START_PAGE; }
   xhr.open('GET', res);
   xhr.send();
   
+}
+
+window.onload = function()
+{
+  
+  pull();
+
 }
