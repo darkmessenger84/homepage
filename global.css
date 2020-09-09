@@ -39,7 +39,6 @@
 	border-color: #a5ff06;
 	background-color: #000000;
     min-height: 100vh;
-    color: #ffffff;
     text-shadow: none;
     position: relative;
 }
@@ -88,22 +87,24 @@
 	margin-left:24px;
 }
 
+@font-face {
+font-family: 'GeoNMS';
+src: url('font/geonms.ttf') format('truetype');
+font-weight: 300;
+font-style: normal;
+}
+
 .bannerheading
 {
 	
 	font-size:3.5em;
-	font-family: "Black Ops One", sans-serif;
-	font-weight: 900;
-	font-style: oblique;
-
+	font-family: "GeoNMS", sans-serif;
     text-shadow:
     -3px -3px 0 #456d00,
     3px -3px 0 #456d00,
     -3px 3px 0 #456d00,
     3px 3px 0 #456d00;  
 }
-
-/* GOITHUB */
 
 .bannerheading a,
 .bannerheading a:link,
@@ -128,15 +129,15 @@
 	margin-right:.25em;
 	font-size:1.5em;
 	font-family: 'Oswald', sans-serif;
-	font-weight: 900;
+	font-weight: 450;
 	line-height:1.5em;
-	color: #76b900;
+	color: #fff;
 
 	text-shadow:
-    -1px -1px 0 #456d00,
-    1px -1px 0 #456d00,
-    -1px 1px 0 #456d00,
-    1px 1px 0 #456d00;  
+    -1px -1px 0 #76b900,
+    1px -1px 0 #76b900,
+    -1px 1px 0 #76b900,
+    1px 1px 0 #76b900;  
 }
 
 .topnav
@@ -154,7 +155,7 @@
 }
 
 .clearfix {
-  *zoom: 1;
+  zoom: 1;
 }
 .clearfix:before, 
 .clearfix:after {
@@ -173,14 +174,15 @@
 .navcol
 {
 	float:left; 
-	width:18em; 
+	width:18.5em; 
 }
 
 .contentwrapper
 {
 	float:right;
-	width:38em;
+	width:39em;
 	margin-right:2em;
+
 }
 
 .contentwrapper p
@@ -196,8 +198,6 @@
 	margin:1em;
 	margin-top:0px;
 	margin-left:2em;
-	border-radius: 1em;
-	background-color: #BADA55;
 
 }
 
@@ -205,13 +205,17 @@
 {
 
 	padding: 4px;
+	padding-left:0.25em;
 	background: linear-gradient(#456d00,#76b900);
 	color: #000;
 	font-family: "Black Ops One", sans-serif;
 	font-style: oblique;
-	font-size: 1.5em;
-	font-weight: bold;
+	font-size: 1.25em;
 	vertical-align: middle;
+	border-left-width:4px;
+	border-left-style:solid;
+	border-left-color:#a5ff06;
+	max-height: 32px;
 
 }
 
@@ -219,7 +223,8 @@
 {
 
 	padding: 4px;
-	background: #0F0F0F;
+	padding-left:0.5em;
+	background: #181818;
 	color: #a5ff06;
 
 }
@@ -227,6 +232,14 @@
 a {
 	text-decoration: underline;
 	color: #a5ff06;
+}
+
+a img,
+a:active img,
+a:link img,
+a:visited img,
+a:hover img {
+	text-decoration: none;
 }
 
 a:active, a:link {
@@ -239,4 +252,154 @@ a:visited {
 
 a:hover {
 	color: #fff;
+}
+
+.heading
+{
+
+	padding: 4px;
+	padding-left:8px;
+	color:#fff;
+	font-family: "Black Ops One", sans-serif;
+	background: linear-gradient(#222222,#141414);
+	font-size:1.25em;
+	border-left-width:4px;
+	border-left-style:solid;
+	border-left-color:#a5ff06;
+	margin-bottom:0.25em;
+
+}
+
+.tabcontainer
+{
+	
+	padding: 4px;
+	padding-left:2em;
+	margin-bottom:1em;
+
+}
+
+.tab
+{
+
+	font-family: "Black Ops One", sans-serif;
+	font-size:1.25em;	
+	font-style: oblique;
+	border-left-width:4px;
+	border-left-style:solid;
+	border-left-color:#a5ff06;
+	padding-left:0.5em;
+	padding-right:0.5em;
+	padding-top: 4px;
+	padding-bottom: 3px;
+	margin-right:0.5em;
+	background: linear-gradient(#222222,#141414) !important;
+	text-decoration: none !important;
+	color:#fff !important; 
+
+}
+
+.activetab
+{
+	background: linear-gradient(#456d00,#76b900) !important;
+	text-decoration: none !important;
+	color: #fff !important; 
+}
+
+.monospaced
+{
+
+	font-family: "Courier New", monospace;
+	font-weight:bold;
+
+}
+
+.list
+{
+	border-left-width:4px;
+	border-left-style:solid;
+	border-left-color:#456d00;
+	margin-left:2em;
+	padding-left:0.5em;
+	font-weight:bold;
+}
+
+.blockquote
+{
+	border-left-width:4px;
+	border-left-style:solid;
+	border-left-color:#456d00;
+	margin-left:2em;
+	padding-left:0.5em;
+	font-weight:bold;
+	background-color: #000;
+}
+
+.bold
+{
+	color: #fff;
+	font-weight: bold;
+}
+
+.emph
+{
+
+	color: #fff;
+	font-weight: bold;
+	font-style: oblique;
+	margin-right:2.5px;
+
+}
+
+.subtleemph
+{
+	font-style: oblique;
+	font-weight: bold;
+	margin-right:2.5px;
+}
+
+.subheading
+{
+
+	color:#fff;
+	font-weight:bold;
+}
+
+.inactive
+{
+	text-decoration: none;
+}
+
+.imgfleft
+{
+	float:left;
+	margin-right:1em;
+}
+
+.infobox
+{
+
+	margin-left:1em;
+	overflow: auto;
+
+}
+
+.infobox p
+{
+	margin-left:auto;
+}
+
+.hidden
+{
+	display: none;
+	visibility: hidden;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
+.divider {
+	background-color: #181818;
+	min-height:1px;
 }

@@ -1,9 +1,162 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="description" content=""><meta name="author" content="Dave Johnson"><link rel="stylesheet" href="skeleton.css"><link rel="stylesheet" href="global.css"><link href="https://fonts.googleapis.com/css?family=Orbitron|Oswald|Black+Ops+One" rel="stylesheet"><title>The Malcontent Millennial</title><script type="text/javascript" language="javascript" src="xhr.js"></script></head><body><div class="mainwrapper"><div class="banner"><div class="bannerinner"><div class="bannertext vcentre"><div class="bannerheading"><a href="#" onclick="pull()">The Malcontent Millennial</a></div><br/><div class="bannersubtext">PC building, gaming, and modding enthusiast. Amateur photographer, programmer, IT techie,<br/>and full stack developer. Anticapitalist rebel, and social outcast. Jack of all trades; master of none.</div></div></div></div><div id="topnav" class="topnav"></div><div class="clearfix"><div id="navcol" class="navcol"><div class="navbox">
-	<div class="navsectionheading">
-		Site
-	</div>
-	<div class="navsectionlinks">
-		• <a href="#" onclick="pull()">Index</a>
-	</div>
-</div>
-</div><div class="contentwrapper" id="contentwrapper"></div></div></div></body></html>
+<!doctype html><html lang="en">
+	<head>
+		<script src="index.js" type="text/javascript" language="javascript"></script>
+		<meta charset="utf-8"><meta name="description" content="">
+		<meta name="author" content="Dave Johnson">
+		<link href="https://fonts.googleapis.com/css?family=Orbitron|Raleway" rel="stylesheet">
+		<link rel="stylesheet" href="index.css">
+		<title>No Man's Sky Navigator</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="heading">No Man's Sky Navigator</div>
+			<p class="para">A companion site to aid long haul interstellar travel and navigation in No Man's Sky, particularly with respect to finding the correct heading when plotting a route to a set of coordinates, using the light at the Galactic Core as a reference point.</p>
+			<div class="topnav vcentre">
+				<a href="#tool" onclick="swap('tool')" class="navtab vcentre">Tool</a>
+				•
+				<a href="#about" onclick="swap('about')" class="navtab vcentre">About</a>
+				•
+				<a href="#about" onclick="swap('portals')" class="navtab vcentre">Portals</a>
+				•
+				<a href="#wishlist" onclick="swap('wishlist')" class="navtab vcentre">Wishlist</a>
+				•
+				<a href="#contact" onclick="swap('contact')" class="navtab vcentre">Contact</a>
+			</div>
+			<br />
+			<div id="tool">
+				<div class="subhead">Tool</div>
+				<p class="para">This tool is recommended to be used in conjuction with the following:-</p>
+				<ul>
+					<li>The in-game Signal Booster, for determining your given position in the galaxy.</li>
+					<li>The in-game Discoveries screen, for setting custom waypoints.</li>
+					<li>The in-game Galactic Map, for highlighting paths to custom waypoints.</li>
+					<li><a href="https://nmsportals.github.io/">Portals Decoder</a> by <a href="https://www.reddit.com/message/compose/?to=rogerhnn">RogerHN</a>, for converting portal glyphs to coordinates and vice-versa.</li>
+					<li><a href="https://pahefu.github.io/pilgrimstarpath/index.html">Pilgrim Star Path</a> by <a href="https://www.reddit.com/message/compose/?to=pahefu">pahefu</a>, for calculating heading and distance between 2 points in the simplest possible terms.</li>
+					<li><a href="https://db.blackholesuns.com/darc.html">Distance and Route Calculator</a> by <a href="https://twitter.com/nmsblkholesuns">Black Hole Suns</a>, for plotting routes across immense distances via black holes.</li>
+					<li>Maybe even a calculator, if you need to absolutely, positiviely, have to double-check the math.</li>
+				</ul>
+				<p class="para">How to use:-</p>
+				<ol>
+					<li>Open the Galactic Map</li>
+					<li>Ensure that you are <span class="emph">not too close</span> to the Galactic Core, for this purpose; a <span class="emph">minimum distance of 800LY</span> is advised</li>
+					<li class="emph">Wait until the Galactic Map camera has stopped moving by itself</li>
+					<li><span class="emph">While remaining locked-on</span> to the current star system, zoom out <span class="emph">as far as possible</span></li>
+					<li>Rotate the view until the light at the Galactic Core is at the <span class="emph">centre of the screen</span></li>
+					<li>Ensure that the distance to the Galactic Core is maximal, and enter its value below:-</li>
+				</ol>
+				<br />
+				<span class="label">Distance:</span><input class="numbers" oninput="calc()" id="distance" pattern="[1-9]{1}[0-9]{2,5}" placeholder="Your distance to the Galactic Core in LY&hellip;" value=""/><br />
+				<span class="label">Turn Angle:</span><input class="numbers" oninput="calc()" id="turnangle" pattern="[1-9]{1}[0-9]{1,2}" placeholder="Your desired turn angle in degrees&hellip;" value=""/><br />
+				<p id="hint" class="para hidden">It looks like you may have obtained your turn angle from <a href="https://pahefu.github.io/pilgrimstarpath/index.html">Pilgrim Star Path</a>.<br />If this is the case, then you are <span class="emph">strongly advised</span> to turn in the <span class="emph">opposite direction to the one given</span>.</p>
+				<p id="result" class="para hidden">Rotate the Galactic Map until the distance to the Galactic Core matches closest this value:-</p>
+				<span class="label">Result:</span><input placeholder="Please supply valid parameters" class="numbers" id="output" readonly />
+			</div>
+			<div id="about" class="hidden">
+				<div class="subhead">About</div>
+				<p class="para">This tool was created because I always found it difficult determining in-game which angle is the optimal angle to turn at when using <a href="https://pahefu.github.io/pilgrimstarpath/index.html">Pilgrim Star Path</a> to plot a route to a custom waypoint.</p>
+				<p class="para">I played around in the Galactic Map a little to try and determine the threshold in LY at which the Galactic Map camera completes a half-rotation around the selected star system, using the light at the Galactic Core as a reference point.</p>
+				<p class="para">With the Galactic Map camera fully zoomed out, I determined that there is 800LY of wiggle room between facing the Galactic Core directly, and facing away from it.</p>
+				<p class="para">I pulled up a calculator and used it to do some number-crunching because I'm shit at math and whittled this down to a ratio of roughly 4.5LY for every 1 degree of rotation, with minimal loss in terms of floating-point precision.<br />
+				<p class="para">There was far less precision to work with if the Galactic Map camera was zoomed all of the way in.</p>
+				<p class="math">1 ÷ 180 = 0.0055555555555556</p>
+				<p class="math">800 × 0.0055555555555556 = 4.44444444444448</p>
+				<p class="math">800 ÷ 180 = 4.4~ repeating</p>
+			</div>
+			<div id="portals" class="hidden">
+				<div class="subhead">Portals</div>
+				<p class="para">Need to find a portal for any given planet, but you do not yet have a fully-upgraded Exocraft Signal Booster or one of the requisite relics?</p>
+				<p class="para">Nil desperandum! I have you covered.</p>
+				<p class="para">I have discovered a cost-free method of finding portals that has a 100% guaranteed success rate. However; please be warned this method is not without its drawbacks, and it ultimately depends on signing up for a Weekend Mission, provided that Hello Games are still running them. The nature of this method may be a bug and may also be patched out in a future update.</p>
+				<p class="para">What you need to do:-</p>
+				<ol>
+					<li>Sign up for the Weekend Mission as normal and start it</li>
+					<li>Travel to the marked location, and land there</li>
+					<li>Ensure that the mission reaches the 'Search for Knowledge Stones' phase, as this is crucial.</li>
+					<li>Do not yet go looking for Knowledge Stones, continue reading instead&hellip;</li>
+				</ol>
+				<p class="para">The 'Search for Knowledge Stones' phase of the mission is pretty much open-ended. Meaning, you can travel to literally any planet and complete this phase of the Weekend Mission there.</p>
+				<p class="para">Locating any three Knowledge Stones on the same planet will always reveal the location of that planet's portal, so you can exploit this to your advantage.</p>
+				<p class="para">Once you have arrived at the location of the portal, be sure to drop at least a Save Beacon or a Base Computer nearby. I would personally recommended dropping a Base Computer so that you can always teleport back via the Space Anomaly or Space Stations at a later time.</p>
+
+			</div> 
+			<div id="wishlist" class="hidden">
+				<div class="subhead">Wishlist</div>
+				<p class="para">This document has been created to catalogue the large number of commonly requested features and bugfixes, including some of my own. However, it does not mean that Hello Games are guaranteed or obligated to work on implementing or addressing them, as they likely have their own plans and an internal road map for developing the game in the long term. All we can do is hope.</p>
+				<div class="subhead">Major Bugbears</div>
+				<p class="para">A majority of these issues have been present in the game for the longest time and to this date they have gone without a long overdue fix. Needless to say, if Hello Games can concentrate on implementing and deploying a robust fix for these issues and that they actually work, then this will go on to help vastly improve the game's overall stability and quality of life.</p>
+				<p class="para">Including, but not limited to:&ndash;</p>
+				<ul>
+					<li>A full fix for terrain regeneration during or after the use of the terrain manipulator in a multiplayer session.
+						<p class="para">This issue has been a major gripe since NEXT brought in full multiplayer, where terrain will regenerate around and inside player-built structures. The primary cause seems to stem from other player's edits being network replicated when they perhaps shouldn't be, and when they are, they are conflicting and overriding one's own terrain edits, regardless of being part of a group or not. Hello Games have claimed to have fixed this issue on numerous occasions, but I do not think they have accounted for all possible scenarios as it keeps cropping up.</p>
+					</li>
+					<li>Fix the take-off direction of landing pads at Trading Posts
+						<p class="para">Taking off from a Trading Post is risky business. The player must take immediate evasive action before they collide with the building. This can be fixed by reversing the take-off direction of the landing pads at Trading Posts as originally depicted in the <a href="https://youtu.be/xpcoO7bTV48?t=70">06/12/14 'Galaxy' pre-release gameplay trailer</a>.</p>
+					</li>
+					<li>Fix the wonky mouse and keyboard flight handling
+						<p class="para">Attempting to dogfight while using mouse and keyboard is currently frustrating, owing to the wonky handling of the flight controls. Making starship maneuverability seem and feel more unwieldy, clunky, and sluggish. This is regardless of fixed or tethered handling modes, regardless of the Starship's specialisation or performance class/grade. This is usually not an issue if playing with a twin stick controller.</p>
+					</li>
+					<li>Introduce HOTAS support</li>
+					<li>Fix the loss of audio fidelity
+						<p class="para">Present since ByteBeat. This is caused by switching survey modes in the Analysis Visor and scanning, for example, when scoping out gas, mineral, or electromagnetic planetary resource hotspots.</p>
+					</li>
+				</ul>
+				<div class="subhead">Multiplayer</div>
+				<p class="para"></p>
+				<ul>
+					<li>Discourage rampant and unchecked griefing at Weekend Mission planets
+						<p class="para">Similar measures applied to protect featured bases should also be applied at Weekend Mission locations.</p><p class="para">Forbid the use of the Geology Cannon and the Terrain Manipulator.<br />Forbid the use of ship-to-surface attacks.<br />Forbid the construction of any kind of base.<br />Limit the number of Communication Terminals that can be placed.<br />Punish uncooperative or disruptive players by spawning Biological Horrors or Sentinels to attack them.</p><p class="para">Have all of these measures in effect within 2km of both the portal and the mission checkpoint.</p>
+					</li>
+					<li>Stricter filtering of discovery names
+						<p class="para">Forbid discoveries being renamed with political or otherwise crass statements. The fact that certain players are credited Nanites for renaming planets along the lines of eg. 'Trump 2020' only serves to encourage this behaviour.</p>
+					</li>
+					<li>
+						AFK timeout for Nexus Mission hosts who are not ready
+						<p class="para">There is nothing more annoying than attempting the daily Quicksilver mission and having to wait for the host who is probably AFK to give the ready signal.</p>
+					</li>
+					<li>Fix misleading Nexus Mission objectives<p class="para">When browsing the mission board at the Nexus, certain types of missions will display misleading objectives. For example, an objective of 'Collect 901 Activated Indium' only requires 750 pieces to be in your inventory when making delivery to the Secure Dropbox at the Trading Post.</p><p class="para">Another egregious example is the 'Kill Biological Horrors' type missions, particularly with respect to the 3 waves one. The objective will be to kill eg. '25' of them, when in actuality you are required to kill at least 3 waves with a total accumulated kill tally of at least over 50.</p></li>
+					<li>Remove the 'Construct an Outpost' type of Nexus Mission 
+						<p class="para">I think I can speak for all that this Nexus Mission type is the least enjoyable.</p>
+					</li>
+					<li>Have Encrypted Nexus Missions pay out a modest amount of Quicksilver
+						<p class="para">It doesn't have to be a huge amount. But I would recommend somewhere between the daily mission reward of 250 and the weekly mission reward of 1,200.
+						</p>
+					</li>
+					<li>Incentivise completing Nexus Missions while in a group
+						<p class="para">Scale the rewards up or down based on the number of participants.</p>
+					</li>
+					<li>Revise and refine the structure of Weekend Missions
+						<p class="para">There is a lot of potential for Weekend Missions to be something intriguing and different each time. Unfortunately, as of this current moment in time, they function too much like fetch quests, and leave a lot to be desired.</p><p class="para">When attempting them solo, they can either be overwhelmingly tedious or criminally easy depending on whether or not the player has come equipped with the requisite resources to hand in at the objective.</p>
+						<p class="para">If they are meant to be difficult and attempted while in a group, then this needs to be incentivised and capitalised upon as mentioned above. Make no mistake, tediousness <span class="emph">is NOT</span> a substitute for actual difficulty.</p>
+						<p class="para">As for intrigue, and Sean-forbid that I say it; ('ｖ ａ ｒ ｉ ｅ ｔ ｙ'), the overall flow of the mission needs to be different each and every time. Both the Nexus Mission board and Space Station mission board have a diverse selection of different mission types to choose from, each with a different set of objectives, each requiring a different approach. This is what is needed for the Weekend Missions.</p>
+						<p class="para">I'm not saying there should be more than one Nexus Mission a week that qualifies as a Weekend Mission, what I am saying is that it should be one mission that is procedurally generated from a pre-defined list of unique mission types.</p>
+					</li>
+					<li>No more railroading of open-ended missions to specific planets
+						<p class="para">Some types of Nexus Missions that can be theoretically completed on literally any planet, such as 'Tame Wild Creatures', 'Scan X of Y', 'Kill Hazardous Flora', to name but a few, etc. But the game chooses to railroad instances of these missions to a very specific anomlous/exotic planet that is almost likely to be in a non-yellow system, and demands its completion on that given planet as mission progress stalls if the player attempts to progress and complete the mission elsewhere.</p>
+					</li>
+					<li>Nexus Mission wrong warp
+						<p class="para">Sometimes, on infrequent occasions, the 'Eliminate Hazardous Flora' type mission will warp the player and spit them out in the wrong system, which usually tends to be one warp jump away from the system where the mission is required to be completed. If the player happens to be out of warp fuel, this adds to the tedium.</p><p class="para">However, not railroading open-ended Nexus Missions at all, as mentioned above, will address this problem.
+						</p>
+					</li>
+					<li>Fix the perpetual screen-shake sometimes caused by other player's Starships landing in the Space Anomaly</li>
+				</ul>
+			</div>
+			<div id="contact" class="hidden">
+				<input type="text" id="discrim" class="spooky" value="darkmessenger84#6373" readonly/>
+				<div class="subhead">Contact</div>
+				<p class="para">Owing to wholesale capitalist data-mining; I do not readily give out links to my active social media handles lightly, particularly with regards to that of de-anonymised social networks, including those that do not pay their taxes and routinely meddle in elections. (Looking directly at you with a 1000yd death glare in particular, Zuckerberg.)</p>
+				<div class="icons">
+					<img style="background-image:url('res/fb.png');" src="res/nope.png" size="64px" />
+					<img style="background-image:url('res/li.png');" src="res/nope.png" size="64px" />
+				</div>
+				<ul>
+					<li><a href="#" onclick="grabDiscrim()" onmouseover="revealDiscrim(this,true)" onmouseout="revealDiscrim(this,false)">Discord</a></li>
+					<li><a target="_blank" href="https://steamcommunity.com/id/dark_messenger84/">Steam</a></li>
+					<li><a target="_blank" href="https://www.reddit.com/user/darkmessenger84">Reddit</a></li>
+					<li><a target="_blank" href="https://www.youtube.com/channel/UC1qN5cEmwbifRpaxTJy_b-A">YouTube</a></li>
+					<li><a target="_blank" href="https://twitter.com/darkmessenger84">Twitter</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="hcentre"><p class="para">Copyright &copy; 2020 Malcontent Milliennial productions</p></div>
+	</body>
+</html>

@@ -1,0 +1,206 @@
+@font-face {
+	font-family: 'GeoNMS';
+	src: url('geonms.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+* {
+  	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin:0px;
+    padding:0px;
+    border:0px;
+    content:0px;
+    background-color: #002020;
+}
+
+html, body
+{
+    
+   
+    top:0%;
+	color: #ffffff;
+	background-color: #002020;
+	font-family: "Raleway", "Open Sans", "Verdana", "Arial", "Helvetica", "Bitstream", Sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	overflow-x: hidden;
+	z-index: 0;
+	min-width: 960px;
+
+}
+
+a img,
+a:active img,
+a:link img,
+a:visited img,
+a:hover img {
+	text-decoration: none;
+}
+
+a:active, a:link {
+	color: #00ffff;
+}
+
+a:visited {
+	color: #008080;
+}
+
+a:hover {
+	color: #00ffff;
+}
+
+div
+{
+
+	margin:0px;
+    padding:0px;
+    border:0px;
+    content:0px;
+
+}
+
+p
+{	
+	line-height: 24px;
+
+}
+
+ul,ol
+{
+	margin-left:4em;
+}
+
+.para 
+{
+	margin-bottom:1em;
+	margin-top: 1em;
+	margin-left:2em;
+}
+
+.heading 
+{
+	margin-top:40px;
+	margin-bottom: 32px;
+	font-size:42px;
+	font-family: "GeoNMS", "Open Sans", "Verdana", "Arial", "Helvetica", "Bitstream", Sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+
+.subhead
+{
+	font-size:24px;
+	font-family: "GeoNMS", "Open Sans", "Verdana", "Arial", "Helvetica", "Bitstream", Sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+
+.wrapper 
+{
+	width: 960px;
+	margin: 0 auto;
+}
+
+.emph
+{
+	font-weight: bold;
+}
+
+.numbers
+{
+	font-family: "Raleway", "Open Sans", "Verdana", "Arial", "Helvetica", "Bitstream", Sans-serif;
+	color:#fff;
+	background-color:#000000;
+	border-color:#008080;
+	border-style: inset;
+	border-width: 1px;
+	font-size:24px;
+	padding:4px;
+	margin-top:4px;
+	margin-bottom:4px;
+	min-width:460px;
+}
+
+.label
+{
+	margin-left:2em;
+	font-family: "GeoNMS", "Open Sans", "Verdana", "Arial", "Helvetica", "Bitstream", Sans-serif;
+	font-size:24px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	width: 180px;
+	display: inline-block;
+}
+
+.navtab
+{
+	margin-left:0.5em;
+	margin-right:0.5em;
+	font-family: "GeoNMS", "Open Sans", "Verdana", "Arial", "Helvetica", "Bitstream", Sans-serif;
+	font-size:24px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.hidden
+{
+	display: none;
+	visibility: hidden;
+}
+
+.vcentre
+{
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.hcentre
+{
+	text-align: center;
+}
+
+.topnav
+{
+	margin-top:32px;
+	margin-bottom:-24px;
+	height:32px;
+	background-color: #002020;
+	text-align: center;
+}
+
+.icons
+{
+	height:40px;
+	text-align: center;
+}
+
+.math
+{
+	text-indent: 0.25em;
+	margin-left:4em;
+	color:#00ffff;
+	background-color:#001010;
+	font-family: "Liberation Mono", "Lucida Console", "Courier New", Monospace;
+}
+
+.spooky
+{
+	position: absolute; 
+  	overflow: hidden; 
+	width: 0px;
+	min-width: 0px;
+	max-width: 0px;
+	font-size: 0px;
+	height: 0px;
+	min-height: 0px;
+	max-height: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
